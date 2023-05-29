@@ -19,9 +19,7 @@ app.use("/api/auth", loginRoutes);
 //http://localhost:8080/api/user
 
 mongoose.set("strictQuery", false);
-mongoose.connect(
-  "mongodb+srv://handaprashant719:prashant123@cluster0.hr9a5ny.mongodb.net/PersonalityData?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.MONGODB_STRING);
 const db = mongoose.connection;
 -
   db.on("error", console.error.bind(console, "connection error:"));
